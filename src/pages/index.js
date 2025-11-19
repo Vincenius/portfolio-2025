@@ -28,8 +28,8 @@ export default function Home() {
         <title>Vincent Will | Portfolio</title>
         <meta name="description" content="Vincent Will's personal website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        {/* todo favicon & analytics & privacy policy */}
+        <link rel="icon" href="/vincenius.svg" />
+        <script defer="" src="https://analytics.vincentwill.com/script.js" data-website-id="916d8b4d-42f5-40cd-a2c2-a9adb7efdf34"></script>
       </Head>
       <div>
         <main>
