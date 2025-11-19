@@ -1,0 +1,13 @@
+.hero {
+  background: var(--mantine-color-teal-0);
+  min-height: 70vh;
+}
+
+.heroContent {
+  padding: 4rem 2rem;
+}
+
+.linkCard:hover {
+  transform: scale(1.1);
+  transition: transform 150ms ease;
+}
