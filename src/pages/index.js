@@ -13,7 +13,7 @@ import vinceniusLogo from '@/imgs/vincenius.svg';
 import playlistLogo from '@/imgs/playlist.png';
 import workoutLogo from '@/imgs/workout.png';
 import sponsorNinjaLogo from '@/imgs/sponsor-ninja.png';
-import { IconBrandGithub, IconBrandLinkedin, IconPencilMinus, IconChessKnight, IconBrandBluesky, IconBrandSpotify, IconLink, IconMail, IconBrandInstagram, IconBrandYoutube, IconBraces, IconChessRook, IconArticle } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconPencilMinus, IconChessKnight, IconBrandBluesky, IconBrandSpotify, IconLink, IconMail, IconBrandInstagram, IconBrandYoutube, IconBraces, IconChessRook, IconArticle, IconDeviceComputerCamera } from '@tabler/icons-react';
 
 const LinkCard = ({ href, children }) => (
   <Card padding="lg" radius="lg" withBorder className={styles.linkCard} component="a" href={href} w="100%" target="_blank" rel="noopener">
@@ -159,16 +159,16 @@ export default function Home() {
                         <Flex gap="md" direction={{ base: 'column', xs: 'row' }}>
                           <Card radius="md" bg="gray.1" p="xs" w={60} h={60}>
                             <Flex align="center" justify="center" h="100%" w="100%">
-                              <ThemeIcon><IconMail size={24} /></ThemeIcon>
+                              <ThemeIcon><IconDeviceComputerCamera size={24} /></ThemeIcon>
                             </Flex>
 
                           </Card>
                           <Box w={{ base: '100%', xs: 'calc(100% - 80px)' }}>
-                            <Title order={2} size="h4" mb="md">OpenMailer</Title>
-                            <Text mb="sm">A minimalist Next.js alternative to Mailchimp.</Text>
+                            <Title order={2} size="h4" mb="md">Meeting Pictures</Title>
+                            <Text mb="sm">A collection of stupid backgrounds for Zoom, Teams, Google Meet. </Text>
                             <Flex gap="sm" align="center">
-                              <ActionIcon variant="outline" component="a" href="https://github.com/Vincenius/OpenMailer" target="_blank" rel="noopener">
-                                <IconBrandGithub size={16} />
+                              <ActionIcon variant="outline" component="a" href="https://meeting.pictures/" target="_blank" rel="noopener">
+                                <IconLink size={16} />
                               </ActionIcon>
                             </Flex>
                           </Box>
@@ -204,6 +204,13 @@ export default function Home() {
                     <Title order={2} size="h4" mb="lg">More Projects</Title>
                     <List spacing="md" size="md" center>
                       <List.Item icon={
+                        <ThemeIcon size={40}><IconMail size={30} /></ThemeIcon>
+                      }>
+                        <Text>
+                          <b><a href="https://github.com/Vincenius/OpenMailer" target="_blank" rel="noopener">OpenMailer</a></b>: A minimalist Next.js alternative to Mailchimp.<br />
+                        </Text>
+                      </List.Item>
+                      <List.Item icon={
                         <Card radius="md" bg="gray.1" p="0" w={40} h={40}>
                           <Flex align="center" justify="center" h="100%" w="100%">
                             <Image component={NextImage} src={puzzlerLogo} alt="puzzler logo" width={100} height={100} w={30} h={30} />
@@ -222,14 +229,10 @@ export default function Home() {
                         </Text>
                       </List.Item>
                       <List.Item icon={
-                        <Card radius="md" bg="gray.1" p="0" w={40} h={40}>
-                          <Flex align="center" justify="center" h="100%" w="100%">
-                            <Image component={NextImage} src={foerderhausLogo} alt="vincenius logo" width={100} height={100} w={30} h={30} />
-                          </Flex>
-                        </Card>
+                        <Image component={NextImage} src={workoutLogo} alt="workout.lol logo" width={100} height={100} w={40} h={40} />
                       }>
                         <Text>
-                          <b><a href="https://www.foerderhaus24.de/" target="_blank" rel="noopener">Förderhaus24</a></b>: A web app to find subsidies for housing in Germany.<br />
+                          <b><a href="https://workout.lol/" target="_blank" rel="noopener">workout.lol</a></b> <i>[Sold]</i>: A small web application to create workouts based on your available equipment.<br />
                         </Text>
                       </List.Item>
                       <List.Item icon={
@@ -244,10 +247,14 @@ export default function Home() {
                         </Text>
                       </List.Item>
                       <List.Item icon={
-                        <Image component={NextImage} src={workoutLogo} alt="workout.lol logo" width={100} height={100} w={40} h={40} />
+                        <Card radius="md" bg="gray.1" p="0" w={40} h={40}>
+                          <Flex align="center" justify="center" h="100%" w="100%">
+                            <Image component={NextImage} src={foerderhausLogo} alt="vincenius logo" width={100} height={100} w={30} h={30} />
+                          </Flex>
+                        </Card>
                       }>
                         <Text>
-                          <b><a href="https://workout.lol/" target="_blank" rel="noopener">workout.lol</a></b> <i>[Sold]</i>: A small web application to create workouts based on your available equipment.<br />
+                          <b>Förderhaus24</b> <i>[Deactivated]</i>: A web app to find subsidies for housing in Germany.<br />
                         </Text>
                       </List.Item>
                       <List.Item icon={
