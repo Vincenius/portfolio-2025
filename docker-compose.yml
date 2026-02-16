@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  vincentwill:
+    build: .
+    ports:
+      - "3006:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    # Uncomment the following lines if you want to use a custom command
+    # command: ["npm", "start"]

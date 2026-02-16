@@ -31,8 +31,8 @@ COPY --from=base /app/package.json ./
 COPY --from=base /app/next.config.mjs ./
 COPY --from=base /app/jsconfig.json ./
 
-# Expose port 3006
-EXPOSE 3006
+# Expose port 3000
+EXPOSE 3000
 
 # Start the Next.js app
 CMD ["npm", "start"]
