@@ -1,5 +1,5 @@
 # Use official Node.js image as the base
-FROM node:20-alpine AS base
+FROM node:24-alpine AS base
 
 # Set working directory
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Production image, copy built assets and install only production dependencies
-FROM node:20-alpine AS runner
+FROM node:24-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
