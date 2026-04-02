@@ -148,6 +148,7 @@ function HomeContent({ images }) {
                         href="https://statusscout.dev"
                         target="_blank"
                         rel="noopener"
+                        aria-label="Visit StatusScout website"
                       >
                         <IconLink size={16} />
                       </ActionIcon>
@@ -157,6 +158,7 @@ function HomeContent({ images }) {
                         href="https://github.com/Vincenius/statusscout"
                         target="_blank"
                         rel="noopener"
+                        aria-label="StatusScout GitHub repository"
                       >
                         <IconBrandGithub size={16} />
                       </ActionIcon>
@@ -185,11 +187,9 @@ function HomeContent({ images }) {
                               href="https://github.com/Vincenius/bsky-embed"
                               target="_blank"
                               rel="noopener"
+                              aria-label="bsky-embed GitHub repository"
                             >
-                              <IconBrandGithub
-                                size={16}
-                                aria-label="GitHub repository for bsky-embed"
-                              />
+                              <IconBrandGithub size={16} />
                             </ActionIcon>
                           </Flex>
                         </Box>
@@ -213,6 +213,7 @@ function HomeContent({ images }) {
                               href="https://vincenius.com/"
                               target="_blank"
                               rel="noopener"
+                              aria-label="Visit Vincenius Art website"
                             >
                               <IconLink size={16} />
                             </ActionIcon>
@@ -242,6 +243,7 @@ function HomeContent({ images }) {
                               href="https://wweb.dev"
                               target="_blank"
                               rel="noopener"
+                              aria-label="Visit wweb.dev"
                             >
                               <IconLink size={16} />
                             </ActionIcon>
@@ -251,6 +253,7 @@ function HomeContent({ images }) {
                               href="https://github.com/Vincenius/wwebdev"
                               target="_blank"
                               rel="noopener"
+                              aria-label="wweb.dev GitHub repository"
                             >
                               <IconBrandGithub size={16} />
                             </ActionIcon>
@@ -281,6 +284,7 @@ function HomeContent({ images }) {
                               href="https://meeting.pictures/"
                               target="_blank"
                               rel="noopener"
+                              aria-label="Visit Meeting Pictures website"
                             >
                               <IconLink size={16} />
                             </ActionIcon>
@@ -305,6 +309,7 @@ function HomeContent({ images }) {
                         href="https://tram4.de"
                         target="_blank"
                         rel="noopener"
+                        aria-label="Visit Tram4 website"
                       >
                         <IconLink size={16} />
                       </ActionIcon>
@@ -314,6 +319,7 @@ function HomeContent({ images }) {
                         href="https://open.spotify.com/artist/5nmykeSzy5xp8bO8Z2QFPs"
                         target="_blank"
                         rel="noopener"
+                        aria-label="Tram4 on Spotify"
                       >
                         <IconBrandSpotify size={21} />
                       </ActionIcon>
@@ -323,6 +329,7 @@ function HomeContent({ images }) {
                         href="https://www.instagram.com/tram4band/"
                         target="_blank"
                         rel="noopener"
+                        aria-label="Tram4 on Instagram"
                       >
                         <IconBrandInstagram size={21} />
                       </ActionIcon>
@@ -332,6 +339,7 @@ function HomeContent({ images }) {
                         href="https://www.youtube.com/channel/UCaSZqsQ-Vzo6I7yFzJMrFYg"
                         target="_blank"
                         rel="noopener"
+                        aria-label="Tram4 on YouTube"
                       >
                         <IconBrandYoutube size={21} />
                       </ActionIcon>
