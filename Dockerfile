@@ -14,21 +14,12 @@ COPY . .
 # Build the Astro app
 RUN npm run build
 
-# Production image, copy built assets and install only production dependencies
-FROM node:24-alpine AS runner
-WORKDIR /app
-ENV NODE_ENV=production
+# Production image: serve static files with nginx
+FROM nginx:stable-alpine AS runner
 
-# Copy package.json and package-lock.json
-COPY package.json package-lock.json* ./
-RUN npm install --frozen-lockfile --production || npm install --production
+COPY --from=base /app/dist /usr/share/nginx/html
 
-# Copy built assets from the build stage
-COPY --from=base /app/dist ./dist
-COPY --from=base /app/astro.config.mjs ./
+# Expose port 80
+EXPOSE 80
 
-# Expose port 3000
-EXPOSE 3000
-
-# Start the Astro preview server
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
