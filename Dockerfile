@@ -11,7 +11,7 @@ RUN npm install --frozen-lockfile || npm install
 # Copy the rest of the application code
 COPY . .
 
-# Build the Next.js app
+# Build the Astro app
 RUN npm run build
 
 # Production image, copy built assets and install only production dependencies
@@ -24,15 +24,11 @@ COPY package.json package-lock.json* ./
 RUN npm install --frozen-lockfile --production || npm install --production
 
 # Copy built assets from the build stage
-COPY --from=base /app/.next ./.next
-COPY --from=base /app/public ./public
-COPY --from=base /app/node_modules ./node_modules
-COPY --from=base /app/package.json ./
-COPY --from=base /app/next.config.mjs ./
-COPY --from=base /app/jsconfig.json ./
+COPY --from=base /app/dist ./dist
+COPY --from=base /app/astro.config.mjs ./
 
 # Expose port 3000
 EXPOSE 3000
 
-# Start the Next.js app
+# Start the Astro preview server
 CMD ["npm", "start"]

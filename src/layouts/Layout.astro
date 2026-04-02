@@ -1,0 +1,24 @@
+---
+import '@mantine/core/styles.css';
+import '../styles/globals.css';
+import faviconSrc from '../imgs/vincenius.svg';
+---
+
+<!doctype html>
+<html lang="en" data-mantine-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vincent Will | Portfolio</title>
+    <meta name="description" content="Vincent Will's personal website" />
+    <link rel="icon" href={faviconSrc.src} type="image/svg+xml" />
+    <script
+      defer
+      src="https://analytics.vincentwill.com/script.js"
+      data-website-id="916d8b4d-42f5-40cd-a2c2-a9adb7efdf34"
+    ></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
