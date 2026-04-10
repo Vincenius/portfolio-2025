@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Home from '../components/Home.jsx';
 import { getImage } from 'astro:assets';
 
-import vincentRaw from '../imgs/vincent.jpg';
 import statusscoutRaw from '../imgs/statusscout.png';
 import tram4Raw from '../imgs/tram4.jpg';
 import foerderhausRaw from '../imgs/foerderhaus.svg';
@@ -14,9 +13,8 @@ import playlistRaw from '../imgs/playlist.png';
 import workoutRaw from '../imgs/workout.png';
 import sponsorNinjaRaw from '../imgs/sponsor-ninja.png';
 
-const [vincent, statusscout, tram4, wweb, puzzler, playlist, workout, sponsorNinja] =
+const [statusscout, tram4, wweb, puzzler, playlist, workout, sponsorNinja] =
   await Promise.all([
-    getImage({ src: vincentRaw, width: 400, format: 'webp' }),
     getImage({ src: statusscoutRaw, width: 800, format: 'webp' }),
     getImage({ src: tram4Raw, width: 800, format: 'webp' }),
     getImage({ src: wwebRaw, width: 60, format: 'webp' }),
@@ -27,7 +25,6 @@ const [vincent, statusscout, tram4, wweb, puzzler, playlist, workout, sponsorNin
   ]);
 
 const images = {
-  vincent: vincent.src,
   statusscout: statusscout.src,
   tram4: tram4.src,
   foerderhaus: foerderhausRaw.src,
@@ -41,5 +38,5 @@ const images = {
 ---
 
 <Layout>
-  <Home images={images} />
+  <Home images={images} activePath={Astro.url.pathname} />
 </Layout>

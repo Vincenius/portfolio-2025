@@ -1,0 +1,111 @@
+.hero {
+  background: #f0faf7;
+}
+
+/* Sidebar: dot texture overlay on top of inline background-color */
+.sidebar {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+@media (min-width: 768px) {
+  /* position: fixed keeps sidebar locked while page scrolls */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+  }
+}
+
+/* Commit-chart border — hidden on mobile, fixed strip on desktop */
+.slantsBorder {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  /*
+   * 54×128px tile: 4 cols × 9 rows of 11px rounded squares, 3px gaps.
+   * 6-shade teal palette + empty cells (no rect) for "low-activity" feel.
+   * Left cols stay dense/dark; right col fades to pale/empty into main bg.
+   */
+  .slantsBorder {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 280px;
+    height: 100vh;
+    width: 54px;
+    z-index: 9;
+    background-color: #f0faf7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='128'%3E%3Crect width='54' height='128' fill='%23f0faf7'/%3E%3Crect x='2' y='2' width='11' height='11' fill='%23087f5b' rx='2'/%3E%3Crect x='15' y='2' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='28' y='2' width='11' height='11' fill='%2338d9a9' rx='2'/%3E%3Crect x='41' y='2' width='11' height='11' fill='%23e6fcf5' rx='2'/%3E%3Crect x='2' y='16' width='11' height='11' fill='%23064e3b' rx='2'/%3E%3Crect x='15' y='16' width='11' height='11' fill='%23087f5b' rx='2'/%3E%3Crect x='28' y='16' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='2' y='30' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='15' y='30' width='11' height='11' fill='%2338d9a9' rx='2'/%3E%3Crect x='41' y='30' width='11' height='11' fill='%23b2f2d9' rx='2'/%3E%3Crect x='2' y='44' width='11' height='11' fill='%23064e3b' rx='2'/%3E%3Crect x='15' y='44' width='11' height='11' fill='%23087f5b' rx='2'/%3E%3Crect x='28' y='44' width='11' height='11' fill='%2338d9a9' rx='2'/%3E%3Crect x='2' y='58' width='11' height='11' fill='%23087f5b' rx='2'/%3E%3Crect x='15' y='58' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='28' y='58' width='11' height='11' fill='%2338d9a9' rx='2'/%3E%3Crect x='41' y='58' width='11' height='11' fill='%2338d9a9' rx='2'/%3E%3Crect x='2' y='72' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='15' y='72' width='11' height='11' fill='%23064e3b' rx='2'/%3E%3Crect x='41' y='72' width='11' height='11' fill='%23e6fcf5' rx='2'/%3E%3Crect x='2' y='86' width='11' height='11' fill='%23064e3b' rx='2'/%3E%3Crect x='15' y='86' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='28' y='86' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='2' y='100' width='11' height='11' fill='%23087f5b' rx='2'/%3E%3Crect x='15' y='100' width='11' height='11' fill='%2338d9a9' rx='2'/%3E%3Crect x='28' y='100' width='11' height='11' fill='%23b2f2d9' rx='2'/%3E%3Crect x='2' y='114' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='15' y='114' width='11' height='11' fill='%23087f5b' rx='2'/%3E%3Crect x='28' y='114' width='11' height='11' fill='%230ca678' rx='2'/%3E%3Crect x='41' y='114' width='11' height='11' fill='%23b2f2d9' rx='2'/%3E%3C/svg%3E");
+    background-repeat: repeat-y;
+    background-size: 54px 128px;
+  }
+}
+
+/* Offset main content to clear fixed sidebar + commit-chart border */
+@media (min-width: 768px) {
+  .mainWrapper {
+    margin-left: 334px; /* 280px sidebar + 54px chart border */
+  }
+}
+
+.profileImageWrapper {
+  display: inline-block;
+  padding: 4px;
+  border-radius: var(--mantine-radius-xl);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25), 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.accentBar {
+  height: 3px;
+  width: 44px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebarLink:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.sidebarLinkActive {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 700;
+}
+
+.sidebarFooter {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.socialIcon {
+  transition: background 0.15s ease, color 0.15s ease;
+  border-radius: 8px;
+}
+
+.socialIcon:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+}
