@@ -8,15 +8,43 @@
 }
 
 .bubbleImage {
-  cursor: pointer;
   max-height: 280px;
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
   display: block;
-  transition: opacity 120ms ease;
 }
 
-.bubbleImage:hover {
-  opacity: 0.88;
+.markdown {
+  font-size: var(--mantine-font-size-lg);
+  line-height: var(--mantine-line-height);
+}
+
+.markdown p {
+  margin: 0 0 0.5em;
+}
+
+.markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown a {
+  color: var(--mantine-color-blue-6);
+  text-decoration: none;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown strong {
+  font-weight: 700;
+}
+
+.markdown code {
+  background: var(--mantine-color-gray-1);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
 }

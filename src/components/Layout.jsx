@@ -55,7 +55,7 @@ export default function Layout({ children, activePath = '/' }) {
                     fit="contain"
                   />
                 </Box>
-                <Title order={1} mt="md" c="white" fw={900} style={{ letterSpacing: '-0.5px' }}>
+                <Title order={2} size="h1" mt="md" c="white" fw={900} style={{ letterSpacing: '-0.5px' }}>
                   Vincent Will
                 </Title>
                 <Box className={styles.accentBar} />
