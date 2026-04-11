@@ -28,12 +28,56 @@ export default function Layout({ children, activePath = '/' }) {
   const isActive = (href) => href === '/' ? activePath === '/' : activePath.startsWith(href);
   const navClass = (href) =>
     `${styles.sidebarLink}${isActive(href) ? ` ${styles.sidebarLinkActive}` : ''}`;
+  const footerContent = ({ centered = false }) => (
+    <>
+      <Flex gap="xs" wrap="wrap" justify={centered ? 'center' : 'space-between'} mb="md" w="100%">
+        <ActionIcon variant="subtle" c="rgba(255,255,255,0.75)" component="a" href="https://github.com/vincenius" target="_blank" rel="noopener" aria-label="GitHub profile" size="md" className={styles.socialIcon}>
+          <IconBrandGithub size={20} />
+        </ActionIcon>
+        <ActionIcon variant="subtle" c="rgba(255,255,255,0.75)" component="a" href="https://www.linkedin.com/in/vincent-will-58356212a/" target="_blank" rel="noopener" aria-label="LinkedIn profile" size="md" className={styles.socialIcon}>
+          <IconBrandLinkedin size={20} />
+        </ActionIcon>
+        <ActionIcon variant="subtle" c="rgba(255,255,255,0.75)" component="a" href="https://lichess.org/@/vincenius" target="_blank" rel="noopener" aria-label="Lichess profile" size="md" className={styles.socialIcon}>
+          <IconChessKnight size={20} />
+        </ActionIcon>
+        <ActionIcon variant="subtle" c="rgba(255,255,255,0.75)" component="a" href="https://bsky.app/" target="_blank" rel="noopener" aria-label="Bluesky profile" size="md" className={styles.socialIcon}>
+          <IconBrandBluesky size={20} />
+        </ActionIcon>
+        <ActionIcon variant="subtle" c="rgba(255,255,255,0.75)" component="a" href="https://open.spotify.com/user/vincenius" target="_blank" rel="noopener" aria-label="Spotify profile" size="md" className={styles.socialIcon}>
+          <IconBrandSpotify size={20} />
+        </ActionIcon>
+      </Flex>
+      <Flex justify={centered ? 'center' : 'space-between'} align="center" wrap="wrap" gap="xs">
+        <Text size="xs" style={{ color: 'rgba(255,255,255,0.6)' }}>© 2026 Vincent Will</Text>
+        <Anchor size="xs" href="/privacy" style={{ color: 'rgba(255,255,255,0.7)' }} td="underline">Privacy</Anchor>
+      </Flex>
+    </>
+  );
   return (
     <MantineProvider theme={theme} forceColorScheme="light">
-      <Flex mih="100vh" direction={{ base: 'column', md: 'row' }}>
+      <Flex mih="100vh" direction="column">
+        <Box className={styles.mobileTopNav} hiddenFrom="md">
+          <Container size="md" px="md" py="sm">
+            <Flex component="nav" gap="xs" justify="space-between" align="center" wrap="wrap">
+              <Text fw={800} c="white" className={styles.mobileNavName}>Vincent Will</Text>
+              <Box component="a" href="/" className={navClass('/')}>
+                <IconHome size={16} />
+                Home
+              </Box>
+              <Box component="a" href="/blog" className={navClass('/blog')}>
+                <IconArticle size={16} />
+                Blog
+              </Box>
+            </Flex>
+          </Container>
+        </Box>
+
+        <Flex className={styles.layoutBody} direction={{ base: 'column', md: 'row' }}>
+
         <Box
           component="aside"
           className={styles.sidebar}
+          visibleFrom="md"
           p="xl"
           pb="md"
           style={{
@@ -55,7 +99,7 @@ export default function Layout({ children, activePath = '/' }) {
                     fit="contain"
                   />
                 </Box>
-                <Title order={2} size="h1" mt="md" c="white" fw={900} style={{ letterSpacing: '-0.5px' }}>
+                <Title order={2} size="h2" mt="md" c="white" fw={900} style={{ letterSpacing: '-0.5px' }}>
                   Vincent Will
                 </Title>
                 <Box className={styles.accentBar} />
@@ -65,7 +109,7 @@ export default function Layout({ children, activePath = '/' }) {
                   <b style={{ color: 'white' }}>artist</b> from Berlin. Here you can find all
                   relevant links, a selection of my latest projects, and my blog.
                 </Text>
-                <Box component="nav" mt="lg" w="100%">
+                <Box component="nav" mt="lg" w="100%" visibleFrom="md">
                   <Box component="a" href="/" className={navClass('/')}>
                     <IconHome size={16} />
                     Home
@@ -77,28 +121,8 @@ export default function Layout({ children, activePath = '/' }) {
                 </Box>
               </Flex>
             </Box>
-            <Box w="100%" pt="md" className={styles.sidebarFooter}>
-              <Flex gap="xs" wrap="wrap" justify="space-between" mb="lg" w="100%">
-                <ActionIcon variant="subtle" c="rgba(255,255,255,0.7)" component="a" href="https://github.com/vincenius" target="_blank" rel="noopener" aria-label="GitHub profile" size="md" className={styles.socialIcon}>
-                  <IconBrandGithub size={20} />
-                </ActionIcon>
-                <ActionIcon variant="subtle" c="rgba(255,255,255,0.7)" component="a" href="https://www.linkedin.com/in/vincent-will-58356212a/" target="_blank" rel="noopener" aria-label="LinkedIn profile" size="md" className={styles.socialIcon}>
-                  <IconBrandLinkedin size={20} />
-                </ActionIcon>
-                <ActionIcon variant="subtle" c="rgba(255,255,255,0.7)" component="a" href="https://lichess.org/@/vincenius" target="_blank" rel="noopener" aria-label="Lichess profile" size="md" className={styles.socialIcon}>
-                  <IconChessKnight size={20} />
-                </ActionIcon>
-                <ActionIcon variant="subtle" c="rgba(255,255,255,0.7)" component="a" href="https://bsky.app/" target="_blank" rel="noopener" aria-label="Bluesky profile" size="md" className={styles.socialIcon}>
-                  <IconBrandBluesky size={20} />
-                </ActionIcon>
-                <ActionIcon variant="subtle" c="rgba(255,255,255,0.7)" component="a" href="https://open.spotify.com/user/vincenius" target="_blank" rel="noopener" aria-label="Spotify profile" size="md" className={styles.socialIcon}>
-                  <IconBrandSpotify size={20} />
-                </ActionIcon>
-              </Flex>
-              <Flex justify="space-between" align="center">
-                <Text size="xs" style={{ color: 'rgba(255,255,255,0.5)' }}>© 2026 Vincent Will</Text>
-                <Anchor size="xs" href="/privacy" style={{ color: 'rgba(255,255,255,0.5)' }} td="underline">Privacy</Anchor>
-              </Flex>
+            <Box w="100%" visibleFrom="md" pt="md">
+              {footerContent({ centered: false })}
             </Box>
           </Flex>
         </Box>
@@ -112,6 +136,13 @@ export default function Layout({ children, activePath = '/' }) {
               {children}
             </Container>
           </Box>
+        </Box>
+        </Flex>
+
+        <Box component="footer" className={styles.pageFooter}>
+          <Container size="md" p="xl" mx="auto">
+            {footerContent({ centered: true })}
+          </Container>
         </Box>
       </Flex>
     </MantineProvider>

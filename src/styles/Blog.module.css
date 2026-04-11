@@ -1,6 +1,6 @@
 .bubble {
   background: white;
-  border-radius: 4px 18px 18px 18px;
+  border-radius: 18px 18px 18px 18px;
   padding: 16px 20px;
   max-width: 680px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);

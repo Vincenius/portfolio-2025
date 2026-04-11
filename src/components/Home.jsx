@@ -273,11 +273,13 @@ export default function Home({ images, activePath }) {
           <List spacing="md" size="md" center>
             <List.Item
               icon={
-                <Box style={{ borderRadius: 8, padding: 4, background: '#e6fcf5', boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
-                  <ThemeIcon size={40} color="teal">
-                    <IconMail size={30} />
-                  </ThemeIcon>
-                </Box>
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <ThemeIcon size={30} color="teal">
+                      <IconMail size={20} />
+                    </ThemeIcon>
+                  </Flex>
+                </Card>
               }
             >
               <Text>
@@ -319,11 +321,13 @@ export default function Home({ images, activePath }) {
             </List.Item>
             <List.Item
               icon={
-                <Box style={{ borderRadius: 8, padding: 4, background: '#e6fcf5', boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
-                  <ThemeIcon size={40} color="teal">
-                    <IconBraces size={30} />
-                  </ThemeIcon>
-                </Box>
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <ThemeIcon size={30} color="teal">
+                      <IconBraces size={20} />
+                    </ThemeIcon>
+                  </Flex>
+                </Card>
               }
             >
               <Text>
@@ -397,11 +401,13 @@ export default function Home({ images, activePath }) {
             </List.Item>
             <List.Item
               icon={
-                <Box style={{ borderRadius: 8, padding: 4, background: '#e6fcf5', boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
-                  <ThemeIcon size={40} color="teal">
-                    <IconChessRook size={30} />
-                  </ThemeIcon>
-                </Box>
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <ThemeIcon size={30} color="teal">
+                      <IconChessRook size={20} />
+                    </ThemeIcon>
+                  </Flex>
+                </Card>
               }
             >
               <Text>
@@ -445,11 +451,13 @@ export default function Home({ images, activePath }) {
             </List.Item>
             <List.Item
               icon={
-                <Box style={{ borderRadius: 8, padding: 4, background: '#e6fcf5', boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
-                  <ThemeIcon size={40} color="teal">
-                    <IconArticle size={30} />
-                  </ThemeIcon>
-                </Box>
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <ThemeIcon size={30} color="teal">
+                      <IconArticle size={20} />
+                    </ThemeIcon>
+                  </Flex>
+                </Card>
               }
             >
               <Text>

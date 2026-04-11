@@ -2,13 +2,39 @@
   background: #f0faf7;
 }
 
+.mobileTopNav {
+  background: #087f5b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.mobileNavName {
+  letter-spacing: -0.3px;
+  margin-right: auto;
+}
+
+.mobileTopNav .sidebarLink {
+  margin-bottom: 0;
+}
+
+.layoutBody {
+  flex: 1;
+}
+
+.pageFooter {
+  background: #087f5b;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 /* Sidebar: dot texture overlay on top of inline background-color */
 .sidebar {
   background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1.5px, transparent 1.5px);
   background-size: 18px 18px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 62em) {
   /* position: fixed keeps sidebar locked while page scrolls */
   .sidebar {
     position: fixed;
@@ -26,7 +52,7 @@
   flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 62em) {
   /*
    * 54×128px tile: 4 cols × 9 rows of 11px rounded squares, 3px gaps.
    * 6-shade teal palette + empty cells (no rect) for "low-activity" feel.
@@ -48,9 +74,13 @@
 }
 
 /* Offset main content to clear fixed sidebar + commit-chart border */
-@media (min-width: 768px) {
+@media (min-width: 62em) {
   .mainWrapper {
     margin-left: 334px; /* 280px sidebar + 54px chart border */
+  }
+
+  .pageFooter {
+    display: none;
   }
 }
 
@@ -94,10 +124,6 @@
   background: rgba(255, 255, 255, 0.2);
   color: white;
   font-weight: 700;
-}
-
-.sidebarFooter {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .socialIcon {

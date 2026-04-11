@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from "../layouts/Layout.astro";
-import Blog from '../components/Blog.jsx';
+import BlogList from '../components/Blog.jsx';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts
@@ -9,12 +9,13 @@ const sortedPosts = posts
   .map(post => ({
     id: post.id,
     date: post.data.date,
-    link: post.data.link ?? null,
+    headline: post.data.headline ?? null,
+    previewText: post.data.previewText ?? null,
     image: post.data.image?.src ?? null,
     body: post.body,
   }));
 ---
 
 <Layout>
-  <Blog posts={sortedPosts} activePath={Astro.url.pathname} />
+  <BlogList posts={sortedPosts} activePath={Astro.url.pathname} />
 </Layout>
