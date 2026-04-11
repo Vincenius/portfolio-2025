@@ -1,5 +1,5 @@
 import Layout from './Layout';
-import { Anchor, Box, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Box, Card, Stack, Text, Title } from '@mantine/core';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from '@/styles/Blog.module.css';
@@ -15,7 +15,7 @@ export default function BlogDetail({ post, activePath }) {
     return <div>Post not found</div>;
   }
 
-  const { headline, date, image } = post.data;
+  const { headline, date, previewText, image } = post.data;
   const content = post.body;
 
   return (
@@ -27,20 +27,14 @@ export default function BlogDetail({ post, activePath }) {
           </Anchor>
         </Box>
 
-        <Box className={styles.bubble}>
-          {image && (
-            <Box mb="sm">
-              <img src={image} alt="" className={styles.bubbleImage} />
-            </Box>
-          )}
-
+        <Card className={styles.bubble} radius="lg" withBorder shadow="sm" p="lg">
           {headline && (
-            <Title order={1} mb={6}>
+            <Title order={1} mb={6} ta="center">
               {headline}
             </Title>
           )}
 
-          <Text size="sm" c="dimmed" mb="sm">
+          <Text size="sm" c="dimmed" mb="md" ta="center">
             {new Date(date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -48,12 +42,24 @@ export default function BlogDetail({ post, activePath }) {
             })}
           </Text>
 
-          <div className={styles.markdown}>
+          {previewText && (
+            <Text size="md" c="dimmed" mb="md" ta="center">
+              {previewText}
+            </Text>
+          )}
+
+          {image && (
+            <Card.Section>
+              <img src={image} alt="" className={styles.bubbleImage} />
+            </Card.Section>
+          )}
+
+          <div className={styles.markdown} style={{ marginTop: image ? '1rem' : 0 }}>
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
               {content}
             </ReactMarkdown>
           </div>
-        </Box>
+        </Card>
       </Stack>
     </Layout>
   );

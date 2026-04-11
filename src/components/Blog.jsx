@@ -1,5 +1,5 @@
 import Layout from './Layout';
-import { Anchor, Box, Flex, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Card, Flex, Stack, Text, Title } from '@mantine/core';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from '@/styles/Blog.module.css';
@@ -23,14 +23,14 @@ export default function BlogList({ posts = [], activePath }) {
       </Flex>
       <Stack gap="md">
         {posts.map((post) => (
-          <Box key={post.id} className={styles.bubble}>
+          <Card key={post.id} className={styles.bubble} radius="lg" withBorder shadow="sm" p="lg">
             {post.image && (
-              <Box mb="xs">
+              <Card.Section>
                 <img src={post.image} alt="" className={styles.bubbleImage} />
-              </Box>
+              </Card.Section>
             )}
             {post.headline && (
-              <Title order={2} mb="xs">
+              <Title order={2} mb="xs" mt={post.image ? 'sm' : 0}>
                 {post.headline}
               </Title>
             )}
@@ -51,7 +51,7 @@ export default function BlogList({ posts = [], activePath }) {
                 Read more →
               </Anchor>
             )}
-          </Box>
+          </Card>
         ))}
       </Stack>
     </Layout>
