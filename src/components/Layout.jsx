@@ -48,7 +48,7 @@ export default function Layout({ children, activePath = '/' }) {
         </ActionIcon>
       </Flex>
       <Flex justify={centered ? 'center' : 'space-between'} align="center" wrap="wrap" gap="xs">
-        <Text size="xs" style={{ color: 'rgba(255,255,255,0.6)' }}>© 2026 Vincent Will</Text>
+        <Text size="xs" style={{ color: 'rgba(255,255,255,0.6)' }}>© {new Date().getFullYear()} Vincent Will</Text>
         <Anchor size="xs" href="/privacy" style={{ color: 'rgba(255,255,255,0.7)' }} td="underline">Privacy</Anchor>
       </Flex>
     </>
