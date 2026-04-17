@@ -1,7 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import { Card } from '@mantine/core';
 import Layout from '../../layouts/Layout.astro';
 import BlogDetail from '../../components/BlogDetail.jsx';
 import styles from '@/styles/Blog.module.css';
@@ -34,18 +33,23 @@ const postContent = {
 <Layout>
   <BlogDetail post={postContent} activePath={Astro.url.pathname} />
   {post.data.image && (
-    <div style={{marginTop: '1rem'}}>
-      <Card className={styles.bubble} radius="lg" withBorder shadow="sm" p="lg">
-        <Card.Section>
-          <Image 
-            src={post.data.image} 
-            alt={post.data.headline || 'Blog post image'} 
-            className={styles.bubbleImage}
-            widths={[400, 800, 1200]}
-            sizes="(max-width: 800px) 400px, 800px"
-          />
-        </Card.Section>
-      </Card>
+    <div style={{ marginTop: '1rem' }}>
+      <div
+        class={styles.bubble}
+        style={{
+          border: '1px solid var(--mantine-color-gray-3)',
+          borderRadius: 'var(--mantine-radius-lg)',
+          boxShadow: 'var(--mantine-shadow-sm)',
+        }}
+      >
+        <Image
+          src={post.data.image}
+          alt={post.data.headline || 'Blog post image'}
+          class={styles.bubbleImage}
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 800px) 400px, 800px"
+        />
+      </div>
     </div>
   )}
 </Layout>
