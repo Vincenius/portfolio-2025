@@ -15,7 +15,7 @@ export default function BlogDetail({ post, activePath }) {
     return <div>Post not found</div>;
   }
 
-  const { headline, date, previewText, image } = post.data;
+  const { headline, date, previewText } = post.data;
   const content = post.body;
 
   return (
@@ -48,13 +48,7 @@ export default function BlogDetail({ post, activePath }) {
             </Text>
           )}
 
-          {image && (
-            <Card.Section>
-              <img src={image} alt="" className={styles.bubbleImage} />
-            </Card.Section>
-          )}
-
-          <div className={styles.markdown} style={{ marginTop: image ? '1rem' : 0 }}>
+          <div className={styles.markdown}>
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
               {content}
             </ReactMarkdown>

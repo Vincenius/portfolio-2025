@@ -1,7 +1,10 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { Card } from '@mantine/core';
 import Layout from '../../layouts/Layout.astro';
 import BlogDetail from '../../components/BlogDetail.jsx';
+import styles from '@/styles/Blog.module.css';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -20,8 +23,9 @@ if (!post) {
 
 const postContent = {
   data: {
-    ...post.data,
-    image: post.data.image?.src ?? null,
+    headline: post.data.headline,
+    date: post.data.date,
+    previewText: post.data.previewText,
   },
   body: post.body,
 };
@@ -29,5 +33,20 @@ const postContent = {
 
 <Layout>
   <BlogDetail post={postContent} activePath={Astro.url.pathname} />
+  {post.data.image && (
+    <div style={{marginTop: '1rem'}}>
+      <Card className={styles.bubble} radius="lg" withBorder shadow="sm" p="lg">
+        <Card.Section>
+          <Image 
+            src={post.data.image} 
+            alt={post.data.headline || 'Blog post image'} 
+            className={styles.bubbleImage}
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 800px) 400px, 800px"
+          />
+        </Card.Section>
+      </Card>
+    </div>
+  )}
 </Layout>
 
