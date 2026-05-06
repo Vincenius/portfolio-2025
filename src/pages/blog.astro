@@ -11,7 +11,7 @@ const sortedPosts = posts
     date: post.data.date,
     headline: post.data.headline ?? null,
     previewText: post.data.previewText ?? null,
-    image: post.data.image?.src ?? null,
+    image: post.data.image ? { src: post.data.image.src, width: post.data.image.width, height: post.data.image.height } : null,
     body: post.body,
   }));
 ---

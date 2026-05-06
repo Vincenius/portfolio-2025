@@ -26,7 +26,7 @@ export default function BlogList({ posts = [], activePath }) {
           <Card key={post.id} className={styles.bubble} radius="lg" withBorder shadow="sm" p="lg">
             {post.image && (
               <Card.Section>
-                <img src={post.image} alt="" className={styles.bubbleImage} />
+                <img src={post.image.src} width={post.image.width} height={post.image.height} alt="" className={styles.bubbleImage} />
               </Card.Section>
             )}
             {post.headline && (

@@ -4,9 +4,8 @@
 }
 
 .bubbleImage {
-  max-height: 280px;
   width: 100%;
-  object-fit: cover;
+  height: auto;
   border-radius: 10px;
   display: block;
 }
