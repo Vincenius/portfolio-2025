@@ -4,6 +4,7 @@ import Home from '../components/Home.jsx';
 import { getImage } from 'astro:assets';
 
 import statusscoutRaw from '../imgs/statusscout.png';
+import starguessrRaw from '../imgs/starguessr.png';
 import tram4Raw from '../imgs/tram4.jpg';
 import foerderhausRaw from '../imgs/foerderhaus.svg';
 import wwebRaw from '../imgs/wweb.png';
@@ -13,8 +14,9 @@ import playlistRaw from '../imgs/playlist.png';
 import workoutRaw from '../imgs/workout.png';
 import sponsorNinjaRaw from '../imgs/sponsor-ninja.png';
 
-const [statusscout, tram4, wweb, puzzler, playlist, workout, sponsorNinja] =
+const [starguessr, statusscout, tram4, wweb, puzzler, playlist, workout, sponsorNinja] =
   await Promise.all([
+    getImage({ src: starguessrRaw, width: 800, format: 'webp' }),
     getImage({ src: statusscoutRaw, width: 800, format: 'webp' }),
     getImage({ src: tram4Raw, width: 800, format: 'webp' }),
     getImage({ src: wwebRaw, width: 60, format: 'webp' }),
@@ -25,6 +27,7 @@ const [statusscout, tram4, wweb, puzzler, playlist, workout, sponsorNinja] =
   ]);
 
 const images = {
+  starguessr: starguessr.src,
   statusscout: statusscout.src,
   tram4: tram4.src,
   foerderhaus: foerderhausRaw.src,
