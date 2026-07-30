@@ -13,6 +13,7 @@ import {
 } from '@mantine/core';
 import {
   IconBrandGithub,
+  IconBrandGooglePlay,
   IconBrandBluesky,
   IconBrandSpotify,
   IconLink,
@@ -23,6 +24,7 @@ import {
   IconChessRook,
   IconArticle,
   IconDeviceComputerCamera,
+  IconStar,
 } from '@tabler/icons-react';
 
 export default function Home({ images, activePath }) {
@@ -36,33 +38,33 @@ export default function Home({ images, activePath }) {
           <Box className={styles.masonryItem}>
             <Card padding={{ base: 'md', md: 'xl' }} radius="lg" withBorder>
               <Card.Section>
-                <Image src={images.starguessr} alt="StarGuessr" h="auto" />
+                <Image src={images.pckaiser} alt="PCKaiser" h="auto" />
               </Card.Section>
               <Title order={2} mt="md" size="h4" mb={4}>
-                StarGuessr
+                PCKaiser
               </Title>
               <Box className={styles.cardAccentBar} />
               <Text mb="md">
-                A game where you guess the GitHub star count of 5 repositories.
+                An Android port of PCKaiser++, a DOS game from 1992.
               </Text>
               <Flex gap="sm" align="center">
                 <ActionIcon
                   variant="outline"
                   component="a"
-                  href="https://starguessr.vincentwill.com/"
+                  href="https://play.google.com/store/apps/details?id=com.pckaiser.app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Visit StarGuessr website"
+                  aria-label="PCKaiser on Google Play"
                 >
-                  <IconLink size={16} />
+                  <IconBrandGooglePlay size={16} />
                 </ActionIcon>
                 <ActionIcon
                   variant="outline"
                   component="a"
-                  href="https://github.com/Vincenius/star-guessr"
+                  href="https://github.com/Vincenius/pckaiser-app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="StarGuessr GitHub repository"
+                  aria-label="PCKaiser GitHub repository"
                 >
                   <IconBrandGithub size={16} />
                 </ActionIcon>
@@ -270,6 +272,31 @@ export default function Home({ images, activePath }) {
           </Title>
           <Box className={styles.cardAccentBar} />
           <List spacing="md" size="md" center>
+            <List.Item
+              icon={
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <ThemeIcon size={30} color="teal">
+                      <IconStar size={20} />
+                    </ThemeIcon>
+                  </Flex>
+                </Card>
+              }
+            >
+              <Text>
+                <b>
+                  <a
+                    href="https://starguessr.vincentwill.com/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    StarGuessr
+                  </a>
+                </b>
+                : A game where you guess the GitHub star count of 5 repositories.
+                <br />
+              </Text>
+            </List.Item>
             <List.Item
               icon={
                 <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
