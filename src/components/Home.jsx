@@ -25,6 +25,7 @@ import {
   IconArticle,
   IconDeviceComputerCamera,
   IconStar,
+  IconGuitarPick,
 } from '@tabler/icons-react';
 
 export default function Home({ images, activePath }) {
@@ -38,35 +39,25 @@ export default function Home({ images, activePath }) {
           <Box className={styles.masonryItem}>
             <Card padding={{ base: 'md', md: 'xl' }} radius="lg" withBorder>
               <Card.Section>
-                <Image src={images.pckaiser} alt="PCKaiser" h="auto" />
+                <Image src={images.mixroadie} alt="Mixroadie" h="auto" />
               </Card.Section>
               <Title order={2} mt="md" size="h4" mb={4}>
-                PCKaiser
+                Mixroadie
               </Title>
               <Box className={styles.cardAccentBar} />
               <Text mb="md">
-                An Android port of PCKaiser++, a DOS game from 1992.
+                An assistant that analyzes your tracks and helps you mix your songs.
               </Text>
               <Flex gap="sm" align="center">
                 <ActionIcon
                   variant="outline"
                   component="a"
-                  href="https://play.google.com/store/apps/details?id=com.pckaiser.app"
+                  href="https://mixroadie.com/"
                   target="_blank"
                   rel="noopener"
-                  aria-label="PCKaiser on Google Play"
+                  aria-label="Visit Mixroadie website"
                 >
-                  <IconBrandGooglePlay size={16} />
-                </ActionIcon>
-                <ActionIcon
-                  variant="outline"
-                  component="a"
-                  href="https://github.com/Vincenius/pckaiser-app"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="PCKaiser GitHub repository"
-                >
-                  <IconBrandGithub size={16} />
+                  <IconLink size={16} />
                 </ActionIcon>
               </Flex>
             </Card>
@@ -181,28 +172,56 @@ export default function Home({ images, activePath }) {
                 <Card radius="md" bg="#e6fcf5" p="xs" w={60} h={60} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
                   <Flex align="center" justify="center" h="100%" w="100%">
                     <ThemeIcon color="teal">
-                      <IconDeviceComputerCamera size={24} />
+                      <IconGuitarPick size={24} />
                     </ThemeIcon>
                   </Flex>
                 </Card>
                 <Box w={{ base: '100%', xs: 'calc(100% - 80px)' }}>
                   <Title order={2} size="h4" mb={4}>
-                    Meeting Pictures
+                    Tram4
                   </Title>
                   <Box className={styles.cardAccentBar} />
-                  <Text mb="sm">
-                    A collection of stupid backgrounds for Zoom, Teams, Google Meet.
-                  </Text>
+                  <Text mb="sm">A skate-punk band where I play the guitar.</Text>
                   <Flex gap="sm" align="center">
                     <ActionIcon
                       variant="outline"
                       component="a"
-                      href="https://meeting.pictures/"
+                      href="https://tram4.de"
                       target="_blank"
                       rel="noopener"
-                      aria-label="Visit Meeting Pictures website"
+                      aria-label="Visit Tram4 website"
                     >
                       <IconLink size={16} />
+                    </ActionIcon>
+                    <ActionIcon
+                      variant="outline"
+                      component="a"
+                      href="https://open.spotify.com/artist/5nmykeSzy5xp8bO8Z2QFPs"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Tram4 on Spotify"
+                    >
+                      <IconBrandSpotify size={21} />
+                    </ActionIcon>
+                    <ActionIcon
+                      variant="outline"
+                      component="a"
+                      href="https://www.instagram.com/tram4band/"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Tram4 on Instagram"
+                    >
+                      <IconBrandInstagram size={21} />
+                    </ActionIcon>
+                    <ActionIcon
+                      variant="outline"
+                      component="a"
+                      href="https://www.youtube.com/channel/UCaSZqsQ-Vzo6I7yFzJMrFYg"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Tram4 on YouTube"
+                    >
+                      <IconBrandYoutube size={21} />
                     </ActionIcon>
                   </Flex>
                 </Box>
@@ -213,53 +232,35 @@ export default function Home({ images, activePath }) {
           <Box className={styles.masonryItem}>
             <Card padding={{ base: 'md', md: 'xl' }} radius="lg" withBorder>
               <Card.Section>
-                <Image src={images.tram4} alt="Tram4 band picture" h={200} />
+                <Image src={images.pckaiser} alt="PCKaiser" h="auto" />
               </Card.Section>
               <Title order={2} mt="md" size="h4" mb={4}>
-                Tram4
+                PCKaiser
               </Title>
               <Box className={styles.cardAccentBar} />
-              <Text mb="md">A skate-punk band where I play the guitar.</Text>
+              <Text mb="md">
+                An Android port of PCKaiser++, a DOS game from 1992.
+              </Text>
               <Flex gap="sm" align="center">
                 <ActionIcon
                   variant="outline"
                   component="a"
-                  href="https://tram4.de"
+                  href="https://play.google.com/store/apps/details?id=com.pckaiser.app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Visit Tram4 website"
+                  aria-label="PCKaiser on Google Play"
                 >
-                  <IconLink size={16} />
+                  <IconBrandGooglePlay size={16} />
                 </ActionIcon>
                 <ActionIcon
                   variant="outline"
                   component="a"
-                  href="https://open.spotify.com/artist/5nmykeSzy5xp8bO8Z2QFPs"
+                  href="https://github.com/Vincenius/pckaiser-app"
                   target="_blank"
                   rel="noopener"
-                  aria-label="Tram4 on Spotify"
+                  aria-label="PCKaiser GitHub repository"
                 >
-                  <IconBrandSpotify size={21} />
-                </ActionIcon>
-                <ActionIcon
-                  variant="outline"
-                  component="a"
-                  href="https://www.instagram.com/tram4band/"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Tram4 on Instagram"
-                >
-                  <IconBrandInstagram size={21} />
-                </ActionIcon>
-                <ActionIcon
-                  variant="outline"
-                  component="a"
-                  href="https://www.youtube.com/channel/UCaSZqsQ-Vzo6I7yFzJMrFYg"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Tram4 on YouTube"
-                >
-                  <IconBrandYoutube size={21} />
+                  <IconBrandGithub size={16} />
                 </ActionIcon>
               </Flex>
             </Card>
@@ -317,6 +318,31 @@ export default function Home({ images, activePath }) {
                   </a>
                 </b>
                 : Security monitoring for web apps
+                <br />
+              </Text>
+            </List.Item>
+            <List.Item
+              icon={
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <ThemeIcon size={30} color="teal">
+                      <IconDeviceComputerCamera size={20} />
+                    </ThemeIcon>
+                  </Flex>
+                </Card>
+              }
+            >
+              <Text>
+                <b>
+                  <a
+                    href="https://meeting.pictures/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Meeting Pictures
+                  </a>
+                </b>
+                : A collection of stupid backgrounds for Zoom, Teams, Google Meet.
                 <br />
               </Text>
             </List.Item>
