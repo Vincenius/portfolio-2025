@@ -277,29 +277,6 @@ export default function Home({ images, activePath }) {
               icon={
                 <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
                   <Flex align="center" justify="center" h="100%" w="100%">
-                    <Image src={images.statusscout} alt="StatusScout logo" w={30} h={30} />
-                  </Flex>
-                </Card>
-              }
-            >
-              <Text>
-                <b>
-                  <a
-                    href="https://statusscout.dev"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    StatusScout
-                  </a>
-                </b>
-                : Security monitoring for web apps
-                <br />
-              </Text>
-            </List.Item>
-            <List.Item
-              icon={
-                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
-                  <Flex align="center" justify="center" h="100%" w="100%">
                     <ThemeIcon size={30} color="teal">
                       <IconDeviceComputerCamera size={20} />
                     </ThemeIcon>
@@ -539,6 +516,29 @@ export default function Home({ images, activePath }) {
               <Text>
                 <b>StarGuessr</b> <i>[Deactivated]</i>: A game where you guess the GitHub
                 star count of 5 repositories.
+                <br />
+              </Text>
+            </List.Item>
+            <List.Item
+              icon={
+                <Card radius="md" bg="#e6fcf5" p="0" w={40} h={40} style={{ boxShadow: '0 0 0 2px rgba(8,127,91,0.35)' }}>
+                  <Flex align="center" justify="center" h="100%" w="100%">
+                    <Image src={images.statusscout} alt="StatusScout logo" w={30} h={30} />
+                  </Flex>
+                </Card>
+              }
+            >
+              <Text>
+                <b>
+                  <a
+                    href="https://github.com/Vincenius/statusscout"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    StatusScout
+                  </a>
+                </b>{' '}
+                <i>[Discontinued]</i>: Security monitoring for web apps.
                 <br />
               </Text>
             </List.Item>
